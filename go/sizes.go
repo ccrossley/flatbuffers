@@ -1,9 +1,5 @@
 package flatbuffers
 
-import (
-	"unsafe"
-)
-
 const (
 	// See http://golang.org/ref/spec#Numeric_types
 
@@ -51,5 +47,5 @@ const (
 
 // byteSliceToString converts a []byte to string without a heap allocation.
 func byteSliceToString(b []byte) string {
-	return *(*string)(unsafe.Pointer(&b))
+	return string(b)
 }
